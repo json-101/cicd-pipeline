@@ -16,7 +16,8 @@ docker run --name jenkins-docker --rm --detach \
 #3. create & build the Dockerfile script that is in this repo
 docker build -t jenkins-json:latest
 
-#4. run my docker image that I just created "jenkins-json:latest"
+#4. run my docker image "jenkins-json:latest" and create a container
+#   called "myjenkins-json:latest"
 docker run --name jenkins-json --restart=on-failure --detach \
   --network jenkins --env DOCKER_HOST=tcp://docker:2376 \
   --env DOCKER_CERT_PATH=/certs/client --env DOCKER_TLS_VERIFY=1 \
